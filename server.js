@@ -5,21 +5,13 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
-const app = express();
+const app = require("./src/app");
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Health Check Route
-app.get("/health", (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: "Server is running successfully",
-  });
-});
 
 // MongoDB Connection
 const connectDB = async () => {
