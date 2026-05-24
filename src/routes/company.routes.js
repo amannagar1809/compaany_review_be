@@ -18,4 +18,5 @@ router.get("/", getCompanies);
 
 router.get("/:id", getCompanyById);
 
+
 module.exports = router;
