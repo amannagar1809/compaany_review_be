@@ -8,7 +8,11 @@ const {
 
 const router = express.Router();
 
-router.post("/", createCompany);
+const upload = require(
+  "../middlewares/upload"
+);
+
+router.post("/", upload.single("logo"), createCompany);
 
 router.get("/", getCompanies);
 
